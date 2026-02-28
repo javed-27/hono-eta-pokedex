@@ -7,11 +7,38 @@
   <body>
     <main>
       <div class="side-bar">
-      <% it.types.forEach( type => {%>
-       <a href= <%=type%>.html> <%=type%> </a>
-      <%});%>
-       </div>
+        <% it.types.forEach( type => {%>
+         <form action="/" method="GET">
+           <input type="hidden" name="type" value=<%=type%>>
+           <button type="submit"><%=type%></button>
+         </form>
+
+        <%});%>
+      </div>
       <div class="pokemon-cards">
+        <% it.pokemonData.forEach( pokemon => {%>
+         <div class="card">
+          <img src=<%=pokemon.img%> alt=<%=pokemon.name%> >
+          <div class="info">
+            <div class="type">
+              <h1><%=pokemon.name%></h1>
+            <div style="display: flex">
+              <%pokemon.types.forEach(type => {%>
+                 <p class=<%=type%>><%=type%></p>
+              <%})%>
+            </div>
+              </div>
+            <table>
+              <%Object.entries(pokemon.stats).forEach(([key,value]) => {%>
+              <tr>
+                <th><%=key%> </th>
+                <td><%=value%></td>
+              </tr>
+              <%})%>  
+            </table>
+          </div>
+         </div>
+        <%});%>
       </div>
     </main>
   </body>

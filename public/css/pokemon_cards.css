@@ -12,14 +12,17 @@ main {
   overflow: hidden;
   justify-content: space-around;
 }
-a {
+button {
   width: 100%;
+  cursor: pointer;
   display: block;
-  text-decoration: none;
+  text-align: left;
+  border: none;
+  background-color: rgb(230, 230, 230);
   color: rgb(110, 110, 110);
 }
 
-.side-bar a {
+.side-bar button {
   font-size: 1.7em;
   padding: 7px 20px;
   font-weight: 530;
