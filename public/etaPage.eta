@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/pokemon_cards.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <main>
+      <div class="side-bar">
+      <% it.types.forEach( type => {%>
+       <a href= <%=type%>.html> <%=type%> </a>
+      <%});%>
+       </div>
+      <div class="pokemon-cards">
+      </div>
+    </main>
+  </body>
+</html>
